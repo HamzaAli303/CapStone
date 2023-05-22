@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <Header>
+            <nav class="container">
+                <div>HAMZA</div>
+                <div>FUTURE DESTINATIONS</div>
+            </nav>
+
+            <div class="header-container">
+                <div class="header-container-inner">
+                    <h1>My friends, let me share with you the secret to a life well-lived: travel. Plan your trips with
+                        us!</h1>
+                    <p>In the embrace of new cultures, we find the wings to fly beyond our limitations. So, I urge you
+                        to
+                        seize
+                        this moment, pack your bags, and let the world become your classroom, your inspiration, and your
+                        greatest adventure.</p>
+                    <a href="#second-page" class="btn">Start Traveling</a>
+                </div>
+            </div>
+        </Header>
+    </main>
+
+    <main class="list">
+        <section>
+            <div id="second-page" class="container">
+                <h2>Start your check list below!</h2>
+
+                <form>
+                    <!-- <div>
+                        <h3>What's your next stop?</h3>
+                        <input type="text" placeholder="Add your next destination" />
+                    </div>
+                    <div>
+                        <h3>What date works for you?</h3>
+                        <input type="date" placeholder="Add date">
+                    </div> -->
+                    <div class="input-container">
+                        <label for="uname"><b> city?</b></label>
+                        <input id="input-destination" type="text" placeholder="Add your next destination" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="country-select"><b>Country:</b></label>
+                        <select id="country-select"></select>
+                    </div>
+                    <div class="input-container">
+                        <label for="date"><b> date?</b></label>
+                        <input id="input-date" type="date" placeholder="Add Date" required>
+                    </div>
+                </form>
+                <button id="addToListBtn">Add to List</button>
+
+            </div>
+        </section>
+    </main>
+    <main class="view">
+        <section>
+            <div id="third-Page" class="container">
+                <h2>Here is all the upcoming trips!</h2>
+                <button id="viewList">View List</button>
+                <div id="message"></div>
+            </div>
+        </section>
+        <ul class='hidden' id="list"></ul>
+    </main>
+    <!-- <div id="message"></div> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="source.js"></script>
+</body>
+
+</html>
