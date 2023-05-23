@@ -88,6 +88,14 @@ let crossedCard = (id) => {
     countryCard[id - 1].style.textDecoration = 'line-through'
 }
 
+// let initMap = () => {
+//     var location = { lat: -25.363, lng: 131.044 };
+//     var map = new google.maps.Map(document.getElementById("map"), {
+//         zoom: 4,
+//         center: location
+//     });
+// }
+// AIzaSyAN8GTud8wskmxVjPjVD2W_ofu9nn4ZN24
 
 
 
