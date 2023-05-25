@@ -7,13 +7,12 @@ let inputDate = document.querySelector('#input-date');
 let inputDestination = document.querySelector('#input-destination');
 let countrySelect = document.querySelector('#country-select');
 let viewList = document.querySelector('#viewList');
-let thirdPage = document.querySelector('#third-Page');
 
 
 let addPlace = (event) => {
     event.preventDefault()
 
-    if (inputDestination.value < 1 && countrySelect.value === '') {
+    if (inputDestination.value < 1) {
         alert('You must enter a city and country')
         return
     }
@@ -31,7 +30,7 @@ let addPlace = (event) => {
         countrySelect.value = 1
         inputDestination.value = ''
 
-        window.location.href = `#third-Page`
+        window.location.href = `trips.html`
 
         // getCity();
     }).catch(err => console.log('err'));
@@ -51,42 +50,42 @@ let getCountries = () => {
         });
 };
 
-let getCity = () => {
-    console.log('here')
-    message.innerHTML = '';
+// let getCity = () => {
+//     console.log('here')
+//     message.innerHTML = '';
 
-    axios.get('http://127.0.0.1:4003/createCity')
-        .then(res => {
-            res.data.forEach(elem => {
-                let countryCard = document.createElement(`div`)
-                countryCard.classList.add('country-card')
-                countryCard.innerHTML = `
-                <div class="countryCard">
-                <h2>${elem.city}, ${elem.country}</h2>
-                <h3>Date of travel: ${elem.date}</h3>
-                <button id="deleteBtn" onclick="deleteCard(${elem['city_id']})">Delete</button>
-                <button onclick="crossedCard(${elem['city_id']})">Visted</button></div>`
+//     axios.get('http://127.0.0.1:4003/createCity')
+//         .then(res => {
+//             res.data.forEach(elem => {
+//                 let countryCard = document.createElement(`div`)
+//                 countryCard.classList.add('country-card')
+//                 countryCard.innerHTML = `
+//                 <div class="countryCard">
+//                 <h2>${elem.city}, ${elem.country}</h2>
+//                 <h3>Date of travel: ${elem.date}</h3>
+//                 <button id="deleteBtn" onclick="deleteCard(${elem['city_id']})">Delete</button>
+//                 <button onclick="crossedCard(${elem['city_id']})">Visted</button></div>`
 
 
-                message.appendChild(countryCard);
-            });
-        });
-};
+//                 message.appendChild(countryCard);
+//             });
+//         });
+// };
 
-let deleteCard = (id) => {
-    axios.delete(`http://127.0.0.1:4003/createCity/${id}`)
-        .then(res => {
-            if (res.status === 200) {
-                getCity();
-            }
-        })
-        .catch(err => console.log(err));
-};
+// let deleteCard = (id) => {
+//     axios.delete(`http://127.0.0.1:4003/createCity/${id}`)
+//         .then(res => {
+//             if (res.status === 200) {
+//                 getCity();
+//             }
+//         })
+//         .catch(err => console.log(err));
+// };
 
-let crossedCard = (id) => {
-    var countryCard = document.getElementsByClassName('countryCard')
-    countryCard[id - 1].style.textDecoration = 'line-through'
-}
+// let crossedCard = (id) => {
+//     var countryCard = document.getElementsByClassName('countryCard')
+//     countryCard[id - 1].style.textDecoration = 'line-through'
+// }
 
 // let initMap = () => {
 //     var location = { lat: -25.363, lng: 131.044 };
