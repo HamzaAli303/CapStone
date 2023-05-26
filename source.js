@@ -50,52 +50,14 @@ let getCountries = () => {
         });
 };
 
-// let getCity = () => {
-//     console.log('here')
-//     message.innerHTML = '';
+function getWeather() {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=denver&appid=886705b4c1182eb1c69f28eb8c520e20&units=imperial`)
+        .then(res => {
+            console.log(res.data.main.temp)
+        })
+};
 
-//     axios.get('http://127.0.0.1:4003/createCity')
-//         .then(res => {
-//             res.data.forEach(elem => {
-//                 let countryCard = document.createElement(`div`)
-//                 countryCard.classList.add('country-card')
-//                 countryCard.innerHTML = `
-//                 <div class="countryCard">
-//                 <h2>${elem.city}, ${elem.country}</h2>
-//                 <h3>Date of travel: ${elem.date}</h3>
-//                 <button id="deleteBtn" onclick="deleteCard(${elem['city_id']})">Delete</button>
-//                 <button onclick="crossedCard(${elem['city_id']})">Visted</button></div>`
-
-
-//                 message.appendChild(countryCard);
-//             });
-//         });
-// };
-
-// let deleteCard = (id) => {
-//     axios.delete(`http://127.0.0.1:4003/createCity/${id}`)
-//         .then(res => {
-//             if (res.status === 200) {
-//                 getCity();
-//             }
-//         })
-//         .catch(err => console.log(err));
-// };
-
-// let crossedCard = (id) => {
-//     var countryCard = document.getElementsByClassName('countryCard')
-//     countryCard[id - 1].style.textDecoration = 'line-through'
-// }
-
-// let initMap = () => {
-//     var location = { lat: -25.363, lng: 131.044 };
-//     var map = new google.maps.Map(document.getElementById("map"), {
-//         zoom: 4,
-//         center: location
-//     });
-// }
-// AIzaSyAN8GTud8wskmxVjPjVD2W_ofu9nn4ZN24
-
+getWeather();
 
 
 // getCity();

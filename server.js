@@ -22,4 +22,7 @@ app.get('/createCity', getCity);
 app.delete('/createCity/:id', deleteCity);
 
 
+// app.get('/weather', getWeather);
+
+
 app.listen(SERVER_PORT, () => console.log('Listening on port 4003...')); 
